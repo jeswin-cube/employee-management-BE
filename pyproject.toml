@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "django-boilerplate"
+version = "0.1.0"
+description = "Backend code for employee management"
+authors = ["Jeswin <jeswineldho@gmail.com>"]
+readme = "README.md"
+packages = [{include = "django_boilerplate"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+django = "4.1.2"
+django-cors-headers = "3.13.0"
+django-redis = "5.2.0"
+djangorestframework = "3.14.0"
+djangorestframework-simplejwt = "5.2.1"
+psycopg2-binary = "2.9.4"
+django-extensions = "3.2.1"
+werkzeug = "2.2.2"
+pyopenssl = "22.1.0"
+requests = "2.28.1"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "0.0.253"
+pre-commit = "2.20.0"
+black = "23.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+extend-exclude = """
+(
+        .venv
+    |   migrations
+)
+"""
+

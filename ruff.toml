@@ -1,0 +1,27 @@
+required-version = "0.0.253"
+format = "grouped"
+line-length = 88
+target-version = "py38"
+select = [
+  "E",  # pycodestyle
+  "F",  # pyflakes
+  "I",  # isort
+]
+ignore = ["E501"]
+builtins = ["_"]
+exclude = [
+    ".git",
+    ".ruff_cache",
+    "__pypackages__",
+    "venv",
+    ".venv",
+    "migrations",
+    "__init__.py"
+]
+
+[flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[isort]
+force-wrap-aliases = true
+combine-as-imports = true
