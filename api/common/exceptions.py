@@ -1,7 +1,7 @@
 import json
 
-class OtpNotSentException(Exception):
-    pass
+from django.http import JsonResponse
+from rest_framework import status
 
 
 class HttpClientErrorException(Exception):
@@ -24,3 +24,8 @@ class HttpClientErrorException(Exception):
             Serializable representation
         """
         return repr(self.value)
+
+
+def server_error(request, *args, **kwargs):
+    data = {"message": "Something went wrong"}
+    return JsonResponse(data, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

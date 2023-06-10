@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from .health import HealthCheckDetail
 
@@ -24,4 +24,5 @@ handler500 = "api.common.exceptions.server_error"
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("health", HealthCheckDetail.as_view(), name="health_check_details"),
+    path("employee/", include("api.employee.urls", "employee"))
 ]

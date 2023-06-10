@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "corsheaders",
     "api.common.apps.CommonConfig",
+    "api.employee.apps.EmployeeConfig"
 ]
 
 MIDDLEWARE = [
