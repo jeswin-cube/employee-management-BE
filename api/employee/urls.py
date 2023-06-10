@@ -1,6 +1,6 @@
 from django.urls import path
 
-from api.employee.views import EmployeeList, EmployeeDetail
+from api.employee.views import EmployeeDetail, EmployeeList
 
 app_name = "api.employee"
 

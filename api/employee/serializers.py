@@ -1,9 +1,7 @@
-from abc import ABC
-
 from rest_framework import serializers
 
 from api.common.serializers import MetadataSerializer
-from api.employee.models import Employee, Designation, Team
+from api.employee.models import Designation, Employee, Team
 
 
 class DesignationSerializer(MetadataSerializer, serializers.ModelSerializer):

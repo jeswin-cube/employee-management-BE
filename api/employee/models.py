@@ -1,5 +1,6 @@
-from api.common.models import Metadata
 from django.db import models
+
+from api.common.models import Metadata
 
 
 class Designation(Metadata):

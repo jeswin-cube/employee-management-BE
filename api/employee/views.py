@@ -12,7 +12,9 @@ class EmployeeList(APIView):
 
     @staticmethod
     def get(request):
-        employee_data_queryset = Employee.objects.select_related("designation", "team").all()
+        employee_data_queryset = Employee.objects.select_related(
+            "designation", "team"
+        ).all()
 
         return Response.generate(
             status.HTTP_200_OK,
