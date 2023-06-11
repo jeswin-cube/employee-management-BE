@@ -41,14 +41,3 @@ $ python manage.py migrate
 ```
 $ python manage.py runserver
 ```
-
-### Run cron jobs locally
-
-Install Redis Server locally and then run the following commands in three different shells with all the
-environment variables exported.
-
-```
-$ redis-server
-$ celery -A config.celery:app worker -l INFO
-$ celery -A config.celery:app beat --loglevel=INFO
-```

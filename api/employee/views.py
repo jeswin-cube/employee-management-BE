@@ -34,6 +34,13 @@ class EmployeeDetail(APIView):
             return Response.request_data_validation_failed(e)
 
         employee_instance = Employee.objects.filter(id=employee_id).first()
+        manager_instance = Employee.objects.filter(id=data.manager_id).first()
+        if manager_instance.manager_id == employee_id:
+            return Response.generate(
+                status.HTTP_406_NOT_ACCEPTABLE,
+                "Couldn't update manager details",
+            )
+
         employee_instance.manager_id = data.manager_id
         employee_instance.save()
 
